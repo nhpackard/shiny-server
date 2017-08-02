@@ -6,23 +6,6 @@ Shiny Server is a server program that makes [Shiny](https://rstudio.com/shiny) a
 
 This is an historical version for 1.4.2, because 1.5.x has problems on the mac.
 
-Note that in `src`, there are the files
-```
-launcher.cc
-launcher.cc.mac
-launcher.cc.org
-```
-
-On linux execute
-```
-cp launcher.cc.org launcher.cc
-```
-and on a mac, execute
-```
-cp launcher.cc.mac launcher.cc
-```
-before executing the build process (cf. below)
-
 ## Features
 
 * Host multiple Shiny applications, each with its own URL
@@ -44,14 +27,18 @@ If you are not using one of the explicitly supported distributions, you can stil
 
 ## Installing from source summary
 
-The basic information from the URL above, copied here for brevity:
-
 ```
-# Clone the repository from GitHub
-git clone https://github.com/nhpackard/shiny-server.git
+# Clone the repository from GitHub and cd to there, e.g.:
+git clone https://github.com/nhpackard/shiny-server.git shiny-server-v.1.4.2
+cd shiny-server-v.1.4.2
+
+# use the appropriate version of launcher.cc:
+# Either linux:
+cp src/launcher.cc.org src/launcher.cc
+# or mac:
+cp src/launcher.cc.mac src/launcher.cc
 
 # Get into a temporary directory in which we'll build the project
-cd shiny-server
 mkdir tmp
 cd tmp
 
